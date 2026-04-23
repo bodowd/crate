@@ -1,0 +1,11 @@
+[project]
+name = "crate-lttb"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pandas>=3.0.2",
+    "seaborn>=0.13.2",
+    "sqlalchemy-cratedb>=0.41.0",
+]
