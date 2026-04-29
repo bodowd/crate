@@ -1,0 +1,23 @@
+# Run specific test
+```
+
+./mvnw test -pl extensions/functions -Dtest=LTTBAggregationTest,LttbStateTest
+```
+
+# To run crate locally
+```
+./mvnw -Pjmods -Dos.arch=x86_64 clean package -DskipTests=true
+```
+Then unzip the tar files 
+```
+tar xvzf crate-*.tar.gz
+```
+
+Then run 
+```
+./crate-*/bin/crate
+```
+
+
+
+
