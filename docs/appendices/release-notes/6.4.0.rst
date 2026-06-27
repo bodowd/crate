@@ -167,7 +167,7 @@ Performance and Resilience Improvements
   final fetch phase.
 
 - Improved query planning by deduplicating identical predicates joined by
-  the ``AND`` operator in ``WHERE`` clauses
+  the ``AND`` operator in ``WHERE`` clauses and join conditions
 
 
 Administration and Operations
