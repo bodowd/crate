@@ -37,6 +37,7 @@ import io.crate.metadata.TransactionContext;
 import io.crate.planner.PlannerContext;
 import io.crate.planner.optimizer.matcher.Captures;
 import io.crate.planner.optimizer.matcher.Match;
+import io.crate.planner.optimizer.symbol.rule.DeduplicateAndPredicates;
 import io.crate.planner.optimizer.symbol.rule.MoveArrayLengthOnReferenceCastToLiteralCastInsideOperators;
 import io.crate.planner.optimizer.symbol.rule.MoveReferenceCastToLiteralCastOnArrayOperatorsWhenLeftIsReference;
 import io.crate.planner.optimizer.symbol.rule.MoveReferenceCastToLiteralCastOnArrayOperatorsWhenRightIsReference;
@@ -58,7 +59,8 @@ public class Optimizer {
         new MoveSubscriptOnReferenceCastToLiteralCastInsideOperators(),
         new MoveArrayLengthOnReferenceCastToLiteralCastInsideOperators(),
         new SimplifyEqualsOperationOnIdenticalReferences(),
-        new RemoveRedundantImplicitCastOverReferences()
+        new RemoveRedundantImplicitCastOverReferences(),
+        new DeduplicateAndPredicates()
     );
 
     public static Symbol optimizeCasts(Symbol query, PlannerContext plannerCtx) {
